@@ -10,3 +10,17 @@ Add a chat interface to this application. This chat is essentially a RAG (Retrie
 Which LLM to use? (eg. GPT-5, Claude etc etc.)
 
 Option with $0: https://groq.com/pricing
+
+
+## How to Run
+
+1. Install dependencies in backend/requirements.txt
+
+  pip install -r requirements.txt
+
+2. Run backend/app.py
+
+  python3 backend/app.py
+
+3. Open frontend/index.html
+
