@@ -1,0 +1,90 @@
+[
+  {
+    "id": "b4978d59-17a8-4ffb-a196-d3064db964e6",
+    "text": "Announcing our $20m seed round to build the next generation of language models"
+  },
+  {
+    "id": "17fdd5cf-5b1e-4e86-b527-d2c23ae063d3",
+    "text": "Large language models, or LLMs, are going to radically change the way we work, and in many ways they are already starting to do so. With AI going fully mainstream this year, however, we are also getting more clarity on its shortcomings for real-world usage, especially in enterprise use-cases. In our view, the current generation of LLMs is amazing as a first generation technology, but these LLMs are still largely “NSFW”: they are not suitable for work quite yet. At Contextual AI, we want to change that, and build AI that works for work."
+  },
+  {
+    "id": "0d64e09c-1b9d-4ce6-8509-dcab6310ddc9",
+    "text": "Our Journey: In our journeys as research leaders at top AI institutions, both in industry (Microsoft Research, Meta/Facebook AI Research, Hugging Face) and academia (Cambridge, NYU, Stanford), we have always been attracted to the most difficult problems. We first started working together at Facebook in 2016 where we built a multimodal framework, synthesizing information from text, images and video to help deal with especially difficult problems, such as detecting hate speech in memes, catching the sale of illicit goods and fighting misinformation. After Facebook, we both went to Hugging Face in early 2022, where we worked on large language model technology, multimodality, and pushed the envelope on model evaluation."
+  },
+  {
+    "id": "d74c3521-c6d0-415b-a395-471a232ee102",
+    "text": "Together we’ve been involved in many high-impact projects over the years. Researchers and practitioners in AI might know us from our work in foundation models (RAG, FLAVA, UniT, Bloom), dense retrieval (Hallucination reduction, MDR, Unsupervised QA), evaluation (SentEval, GLUE, SuperGLUE, Dynabench, Eval on the Hub), multimodality (Hateful Memes, Winoground, TextVQA, MMF) and representation learning (InferSent, GroundSent, Poincare embeddings)."
+  },
+  {
+    "id": "2e3771f8-df67-4958-a313-c54351f12508",
+    "text": "We have seen firsthand how AI can have a positive impact on the world, and how gratifying it is to help state-of-the-art AI research turn into something concrete that actually makes the world a better place. We are excited to continue that journey at Contextual AI."
+  },
+  {
+    "id": "5cb56e83-bc77-4603-99fa-90dba1f90bbc",
+    "text": "The round: We are emerging from stealth today with $20m in seed funding, in a round led by Bain Capital Ventures (BCV) and with participation from Lightspeed, Greycroft, SV Angel and well-known angel investors including Elad Gil, Lip-Bu Tan, Sarah Guo, Amjad Masad, Harry Stebbings, Fraser Kelton, Sarah Niyogi and Nathan Benaich. "
+  },
+  {
+    "id": "85a930b9-1012-4346-aad8-66a62ff4b40d",
+    "text": "We were selective and thoughtful about what investors we wanted to work with and why. Beyond the dollar investment, it was important to us that we work with those who shared our belief that AI for business requires responsible stewards and exceptional attention to precision.  We are grateful for their continued support of our mission and vision, especially to Bain Capital Ventures for leading our round. "
+  },
+  {
+    "id": "20348e5c-846b-43d5-b508-a9ea25be3828",
+    "text": "What problems are we solving? Real-world AI deployments require trust, safety, data privacy, low latency and a high degree of customizability. Sending valuable private data to external API endpoints can have unintended consequences for enterprises because they have very little control over the LLM that powers the application. We are most excited for Contextual AI to solve the following problems for enterprise needs: "
+  },
+  {
+    "id": "53e932f1-ba26-4f1f-9218-a91f082a6610",
+    "text": "Data privacy: In the modern era, and even more so in the future, data moats are one of the only clear differentiators for an enterprise. Companies want to safeguard that raw data, not be forced to send it to somebody else to process."
+  },
+  {
+    "id": "395933a2-d3e1-4549-9669-11e8cf68dfb9",
+    "text": "Customizability: LLMs should be easily adaptable to new types of data, new data sources and new types of use cases. But current LLMs are hidden behind an API endpoint, with almost no control for the end user."
+  },
+  {
+    "id": "1e127f46-8175-4bd9-ae05-b58369f7f44f",
+    "text": "Hallucination: LLMs make things up, and what’s worse, they tell you the wrong answer with a high degree of confidence and can’t tell you how they arrived at that conclusion. That’s unacceptable in most workplaces."
+  },
+  {
+    "id": "dc15a065-f825-4af4-b277-3d2bbc895401",
+    "text": "Compliance: There is no clear-cut way to remove information from an LLM, or even just to revise it, which makes them risky from a compliance perspective."
+  },
+  {
+    "id": "d5a895b7-2d4e-48d6-a9fe-e8cabed78b07",
+    "text": "Staleness: ChatGPT does not know anything that happened after September 2021, and the most downloaded model on the HuggingFace hub is BERT, which still thinks that Obama is president. LLMs should be able to always be up to date and handle fresh data as it comes in, in real time."
+  },
+  {
+    "id": "b087b687-12b4-4434-806f-2ff30453f766",
+    "text": "Latency and cost: State of the art systems are too slow and/or too expensive for many applications, partially because they require a round-trip to somebody else’s servers, and partially because the models themselves are just too slow."
+  },
+  {
+    "id": "67178264-3666-4520-b23b-751cfb2ed0e1",
+    "text": "LLMs designed for the enterprise: Thinking about language models from first principles, with these challenges in mind, leads you to a different kind of model. Rather than cramming everything into the parameters of one giant, generalist model that does “AGI” (artificial general intelligence), what companies really need is “ASI”—artificial specialized intelligence. Why waste parameters, money, latency and compute on a model that knows Shakespeare and quantum physics, when all it should really do is solve your company’s problem?"
+  },
+  {
+    "id": "1d99c5ac-c3dd-41e2-ba54-2ca633f12578",
+    "text": "The best approach for this is “Retrieval Augmented Generation”, or RAG, where a generative model is made to work together with a retrieval-based data store, like a vector database, to adapt a model to a given use case and custom data. We are deeply confident in this approach, given that we pioneered the first effort around RAG when we were at Facebook AI Research and published the first papers and open-source models on it in 2020."
+  },
+  {
+    "id": "f8c46988-e03b-43e5-adf2-f2fc4352beec",
+    "text": "In the RAG paradigm, an LLM is made to work together with an external memory, which yields a system that is less hallucinatory and more customizable to new data sources. In other words, it has the potential to overcome many of the issues we listed above. However, the current attempts at retrieval-augmenting GPTs – where indie developers cobble together a VectorDB and an LLM – suffers from many of the same shortcomings that we listed above, and inherits many of the issues from the underlying LLM that powers most of that chain."
+  },
+  {
+    "id": "9a265f09-76c7-4d1f-a588-6472245e59ab",
+    "text": "Research in augmented language models has not stood still, however, and it is possible to build LLM models and platforms that are much more closely integrated, specialized, efficient and optimized. In our view, decoupling the memory from the generative capacity of LLMs, with different modules taking care of data integrations, reasoning, speaking, and even seeing and listening, all while being closely integrated and jointly optimized, is the future of these models and what will unlock their true potential for enterprise use cases in particular. "
+  },
+  {
+    "id": "9edfb42e-bc46-4b78-af11-740698e04d4b",
+    "text": "With a technology as important and disruptive as LLMs, we believe there should be more players, and that it is very dangerous to have this technology only in the hands of a few incumbent big tech corporations. Our approach both supports and is supported by open source. We plan to leverage open source software as much as we can and to give back to the community in return. Open source, and open science, should help democratize the technology, for the benefit of all."
+  },
+  {
+    "id": "4dff09c5-69bd-43b3-804e-da3ab9e510fa",
+    "text": "This journey is 1% finished: One of our favorite slogans at Facebook was always, “this journey is only 1% finished”. The same is true for AI in general: the world is only just discovering its power. As founders, we are humbled by the support from our amazing team of investors, as well as our core team of rock star engineers, scientists and others."
+  },
+  {
+    "id": "dc871cba-f47d-4b79-8b52-436780e9d0e7",
+    "text": "Our seed round will allow us to kickstart our journey and scale up the team. We’re hiring for many different roles (Bay Area, in-office as much as possible). Please see our Careers portal if you’re interested in joining our team."
+  },
+  {
+    "id": "d84627d7-d109-4c8e-8506-0484e8eeb22d",
+    "text": "We’re excited to go on this journey to build the next generation of LLMs, designed from first principles with the enterprise use case in mind. If you’d like to learn more, please send us a note."
+  }
+]
