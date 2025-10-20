@@ -18,7 +18,7 @@ from db import SimpleVectorDB
 EMBEDDING_MODEL = os.environ.get("EMBEDDING_MODEL", "TaylorAI/bge-micro-v2")
 BLOGS_JSON_PATH = os.environ.get("BLOGS_JSON_PATH", "blog.json")
 LLM_API_URL = "https://api.groq.com/openai/v1/chat/completions"
-LLM_API_KEY = "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"
+LLM_API_KEY = "<YOUR_API_KEY>"
 VECTORS_PATH = "vectors.npy"        # File to store vectors
 METADATA_PATH = "metadata.json" 
 
