@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vector Search UI</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; max-width: 900px; }
+    input, select { padding: 6px; margin: 4px; }
+    button { padding: 6px 10px; }
+    #results { margin-top: 20px; }
+    .result { border-bottom: 1px solid #ccc; padding: 10px 0; }
+    .score { color: gray; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+  <h2>DIY Vector Search</h2>
+
+  <label>Query:</label>
+  <input id="query" style="width:60%" placeholder="Type something..." />
+  <label>k:</label>
+  <input id="k" type="number" value="5" style="width:60px" />
+  <label>Metric:</label>
+  <select id="metric">
+    <option value="cosine">cosine</option>
+    <option value="dot">dot</option>
+    <option value="euclidean">euclidean</option>
+  </select>
+  <button id="search">Search</button>
+
+  <div id="results"></div>
+
+  <script>
+    const backendUrl = "http://127.0.0.1:8000";
+
+    document.getElementById("search").addEventListener("click", async () => {
+      const q = document.getElementById("query").value;
+      const k = parseInt(document.getElementById("k").value);
+      const metric = document.getElementById("metric").value;
+
+      if (!q) return alert("Please enter a query.");
+
+      const resp = await fetch(`${backendUrl}/search`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query: q, k: k, metric: metric })
+      });
+
+      if (!resp.ok) {
+        const text = await resp.text();
+        alert("Error: " + resp.status + "\n" + text);
+        return;
+      }
+
+      const data = await resp.json();
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.innerHTML = `<h3>Top ${data.length} Results</h3>`;
+      data.forEach(r => {
+        const snippet = r.text.length > 400 ? r.text.slice(0, 400) + "..." : r.text;
+        resultsDiv.innerHTML += `
+          <div class="result">
+            <div><strong>ID:</strong> ${r.id}</div>
+            <div class="score">Score: ${r.score.toFixed(4)}</div>
+            <div>${snippet}</div>
+          </div>
+        `;
+      });
+    });
+  </script>
+
+  <hr />
+<h2>Chat (RAG Assistant)</h2>
+<textarea id="chatQuery" rows="3" style="width:100%" placeholder="Ask a question..."></textarea><br>
+<button id="chatBtn">Ask</button>
+
+<div id="chatResponse" style="margin-top:20px;"></div>
+
+<script>
+document.getElementById("chatBtn").addEventListener("click", async () => {
+  const q = document.getElementById("chatQuery").value;
+  if (!q) return alert("Please enter a question.");
+  const resp = await fetch("http://127.0.0.1:8000/chat", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({query: q, k: 5})
+  });
+  const data = await resp.json();
+  const chatDiv = document.getElementById("chatResponse");
+  chatDiv.innerHTML = `<h3>Answer</h3><p>${data.answer}</p>
+  <h4>Context Used:</h4><ul>${data.context_docs.map(d=>`<li>${d.text.slice(0,200)}...</li>`).join('')}</ul>`;
+});
+</script>
+
+</body>
+</html>
